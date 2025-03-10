@@ -55,5 +55,35 @@ namespace ConsoleApp
             return -1; // Không có phần tử đơn lẻ (trường hợp ngoại lệ)
         }
 
+        public static int GCD(int a, int b)
+        {
+            // Sử dụng thuật toán Euclid
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+
+        public static int RevertNumber(int number)
+        {
+            int revertNumber;
+            if (number < 0)
+            {
+                int numberAbs = -number;
+                revertNumber = int.Parse(new string([.. numberAbs.ToString().Reverse()])) * -1;
+            }
+            else
+            {
+                revertNumber = int.Parse(new string(number.ToString().Reverse().ToArray()));
+            }
+            return revertNumber;
+        }
+
+
+
     }
 }
